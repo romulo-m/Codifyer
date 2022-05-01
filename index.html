@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <h1 class="tituloPrincipal">De/Codifyer</h1>
     </header>
     <main>
         <div class="container">
             <form>
+                <!-- Selecionando o método -->
                 <h2 class="tituloCaixa">Selecione o método que deseja:</h2>
                 <select id="forma">
                     <option value="0">Selecionar</option>
@@ -21,24 +23,31 @@
                     <option value="2">Base64</option>
                 </select>
 
+                <!-- Caixa da cifra (só aparece se for marcado cifra de césar) -->
                 <section class="cesarPop" id="saltoCifra">
                     <h3>Valor da chave de codificação</h3>
-                    <input class="key" type="number" name="contador" id="incremento" min="1" max="25">                
+                    <input class="key" type="number" name="contador" id="chave" min="1" max="25">                
                 </section>
-
                 
-                <textarea  placeholder="Digite aqui o seu texto" id="msgCifra" cols="60" rows="10" class="input-padrao" required></textarea>
+                <!-- <textarea  placeholder="Digite aqui o seu texto" id="msgCifra" cols="60" rows="10" class="input-padrao" required></textarea> -->
 
-                <div class ="choices" id="choice">
+                <!-- Seleção de criptografia -->
+                <div class="choices" id="choice">
                     <input type="radio" name="escolha" id="code" value="1">Criptografar                    
                     <input type="radio" name="escolha" id="decode" value="2">Descriptografar
                 </div>
 
-                
+                <!-- textos -->
+                <div id="msg">
+                    <!-- Texto a decodificar ou codificar -->
+                    <p>Digite sua mensagem:</p>
+                    <textarea placeholder="Digite aqui o seu texto" id="entrada" cols="40" rows="5" class="input-padrao"></textarea>
+                  </div>
 
-                <section id="resultado">    
+                <!-- Resultado -->
+                <section>    
                     <h3>Resultado:</h3>
-                    <output type="text" id="resultado"></output>
+                    <output id="resultado" readonly type="text"></output>
                 </section>
 
                 <div id="btn">
@@ -53,7 +62,6 @@
         <p>Projeto Criado para fins educacionais.</p>
         <p>Desenvolvido por: Rômulo Miranda &copy;</p>        
     </footer>
-
 
     <script src="./script.js"></script>
 </body>
