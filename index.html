@@ -16,21 +16,22 @@
         <div class="container">
             <form>
                 <!-- Selecionando o método -->
-                <h2 class="tituloCaixa">Selecione o método que deseja:</h2>
-                <select id="forma">
-                    <option value="0">Selecionar</option>
-                    <option value="1">Cifra de césar</option>
-                    <option value="2">Base64</option>
-                </select>
+                <div class="method">
+                    <h2 class="tituloCaixa">Selecione o método que deseja:</h2>
+                    <select class="select" id="forma">
+                        <option value="0">Selecionar</option>
+                        <option value="1">Cifra de césar</option>
+                        <option value="2">Base64</option>
+                    </select>
+                </div>
 
                 <!-- Caixa da cifra (só aparece se for marcado cifra de césar) -->
                 <section class="cesarPop" id="saltoCifra">
-                    <h3>Valor da chave de codificação</h3>
+                    <h3>Valor da chave de codificação:</h3>
                     <input class="key" type="number" name="contador" id="chave" min="1" max="25">                
                 </section>
                 
-                <!-- <textarea  placeholder="Digite aqui o seu texto" id="msgCifra" cols="60" rows="10" class="input-padrao" required></textarea> -->
-
+                
                 <!-- Seleção de criptografia -->
                 <div class="choices" id="choice">
                     <input type="radio" name="escolha" id="code" value="1">Criptografar                    
@@ -38,16 +39,16 @@
                 </div>
 
                 <!-- textos -->
-                <div id="msg">
+                <div class="msg" id="msg">
                     <!-- Texto a decodificar ou codificar -->
-                    <p>Digite sua mensagem:</p>
+                    <h3>Digite sua mensagem:</h3>
                     <textarea placeholder="Digite aqui o seu texto" id="entrada" cols="40" rows="5" class="input-padrao"></textarea>
                   </div>
 
                 <!-- Resultado -->
-                <section>    
+                <section class="result">    
                     <h3>Resultado:</h3>
-                    <output id="resultado" readonly type="text"></output>
+                    <textarea id="resultado" cols="40" rows="5" readonly type="text"></textarea>
                 </section>
 
                 <div id="btn">

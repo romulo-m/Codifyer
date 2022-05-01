@@ -40,13 +40,8 @@ codificar = () => {
     let key = document.querySelector('#chave').value;    
     let cipher = document.querySelector('#forma').value
 
-    //Limpar Campo resultado
-    // saida.addEventListener('change', (e) => {
-    //     if(saida == true)
-    //     saida.remove()
-    // })
-
-    // Motor de césar codificando
+   
+// Motor de césar codificando
     if(cipher == '1'){
         codeCesar()                
     }
@@ -69,13 +64,12 @@ codificar = () => {
         resultado.innerText = empty
     }
     
-    // Motor de base64 codificando
+// Motor de base64 codificando
     if (cipher == '2'){
     resultado = btoa(entrada)
     saida.innerHTML = resultado
     }
 }
-
 
 //FUNÇÃO DE ENVIO DECODIFICAR
 decodificar = () => {  
@@ -84,7 +78,7 @@ decodificar = () => {
     let key = document.querySelector('#chave').value;    
     let cipher = document.querySelector('#forma').value
     
-    // Motor de césar decodificando
+// Motor de césar decodificando
     if(cipher == '1'){
        decodeCesar()
     }
@@ -95,11 +89,11 @@ decodificar = () => {
         for (let i = 0; i < entrada.length; i++) {
             let texto = entrada[i].charCodeAt()
             if (texto >= 65 && texto <= 90) { 
-                let temp = (texto - 65 - passo) % 26
-                empty += String.fromCharCode(temp + 65)
-            } else if (texto >= 97 && texto <= 122) {
                 let temp = (texto - 97 - passo) % 26
                 empty += String.fromCharCode(temp + 97)
+            } else if (texto >= 97 && texto <= 122) {
+                let temp = (texto - 97 - passo) % 26
+                empty += String.fromCharCode((temp < 0 ? temp + 26 : temp) + 97)
             } else {
                 empty += entrada[i]
             }
@@ -107,7 +101,7 @@ decodificar = () => {
         resultado.innerText = empty
     }
     
-    // Motor de base64 decodificando
+// Motor de base64 decodificando
     if(cipher == '2'){
     resultado = atob (entrada)
     saida.innerHTML = resultado
