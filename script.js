@@ -90,7 +90,7 @@ decodificar = () => {
             let texto = entrada[i].charCodeAt()
             if (texto >= 65 && texto <= 90) { 
                 let temp = (texto - 65 - passo) % 26
-                empty += String.fromCharCode(temp + 65)
+                empty += String.fromCharCode((temp < 0 ? temp + 26 : temp) + 65)
             } else if (texto >= 97 && texto <= 122) {
                 let temp = (texto - 97 - passo) % 26
                 empty += String.fromCharCode((temp < 0 ? temp + 26 : temp) + 97)
